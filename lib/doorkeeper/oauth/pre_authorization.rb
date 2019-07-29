@@ -88,8 +88,11 @@ module Doorkeeper
       end
 
       def validate_redirect_uri
+        puts "enter in validate_redirect_uri"
         return false if redirect_uri.blank?
-
+        puts "point 1"
+        puts redirect_uri
+        puts client.redirect_uri
         Helpers::URIChecker.valid_for_authorization?(
           redirect_uri,
           client.redirect_uri
